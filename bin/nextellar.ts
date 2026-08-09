@@ -157,7 +157,7 @@ program
       }
 
       console.error(
-        `Unknown telemetry action \"${action}\". Use: status, enable, disable.`
+        `Unknown telemetry action "${action}". Use: status, enable, disable.`
       );
       await exitWithTelemetry(1);
     } finally {

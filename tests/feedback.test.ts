@@ -23,7 +23,11 @@ describe('feedback', () => {
     delete process.env.CI;
   });
 
-  const stripAnsi = (str: string) => str.replace(/\x1B\[[0-9;]*m/g, '').replace(/\x1B\[[0-9;]*[A-Za-z]/g, '');
+  const ansiEscape = String.fromCharCode(27);
+  const stripAnsi = (str: string) =>
+    str
+      .replace(new RegExp(`${ansiEscape}\\[[0-9;]*m`, 'g'), '')
+      .replace(new RegExp(`${ansiEscape}\\[[0-9;]*[A-Za-z]`, 'g'), '');
 
   describe('displaySuccess', () => {
     it('works in interactive mode', async () => {

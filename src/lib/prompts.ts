@@ -10,7 +10,7 @@ import {
   text,
 } from "@clack/prompts";
 import { detectPackageManager } from "./install.js";
-import { isValidUrl, suggestProjectName, validateProjectName } from "./validate.js";
+import { isValidUrl, validateProjectName } from "./validate.js";
 
 export interface PromptResult {
   projectName: string;
